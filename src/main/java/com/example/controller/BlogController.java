@@ -40,17 +40,17 @@ public class BlogController {
         return blogService.article(id);
     }
     
-    @PostMapping("/api/article")
+    @PostMapping("/api/articles")
     public @ResponseBody void create(@RequestBody Article article){
         blogService.create(article);
     }
     
-    @PutMapping("/api/article/{id}")
+    @PutMapping("/api/articles/{id}")
     public @ResponseBody void update(@RequestBody Article article){
         blogService.update(article);
     }
     
-    @DeleteMapping("/api/article/{id}")
+    @DeleteMapping("/api/articles/{id}")
     public @ResponseBody void delete(@PathVariable("id") long id){
         blogService.delete(id);
     }
