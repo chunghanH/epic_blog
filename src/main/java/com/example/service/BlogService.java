@@ -26,18 +26,31 @@ public class BlogService {
     }
     
     public Article article(long id) {
-        Optional<Article> tmp = articleRepository.findById(id);
-        return tmp.get();
+        return articleRepository.findById(id).get();
     }
     
     @Transactional
     public void create(Article article) {
-        articleRepository.save(article);
+        if(article.getTitle() != null && article.getContent() != null) {
+            articleRepository.save(article);
+        }
     }
     
     @Transactional
     public void update(Article article) {
-        articleRepository.save(article);
+        Article tmpArticle = articleRepository.findById(article.getId()).get();
+        
+        if(tmpArticle != null) {
+            if(article.getTitle() != null) {
+                tmpArticle.setTitle(article.getTitle());
+            }
+            
+            if(article.getContent() != null) {
+                tmpArticle.setContent(article.getContent());
+            }
+            
+            articleRepository.save(tmpArticle);
+        }
     }
     
     @Transactional

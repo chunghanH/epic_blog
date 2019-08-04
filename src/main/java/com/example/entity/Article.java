@@ -10,10 +10,12 @@ import javax.persistence.TemporalType;
 import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@DynamicUpdate
 public class Article {
     
     @Id
