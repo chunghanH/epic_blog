@@ -19,7 +19,7 @@ import com.example.entity.Article;
 import com.example.service.BlogService;
 
 
-@RestController
+@Controller
 public class BlogController {
     
     @Resource
@@ -27,7 +27,7 @@ public class BlogController {
     
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("text", "hello");
+        model.addAttribute("text", "index");
         return "index";
     }    
     
