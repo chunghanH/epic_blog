@@ -1,5 +1,0 @@
-com/example/entity/Article.class
-com/example/repository/ArticleRepository.class
-com/example/BlogApplication.class
-com/example/controller/BlogController.class
-com/example/service/BlogService.class
