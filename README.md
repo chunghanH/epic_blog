@@ -3,13 +3,13 @@
 EPIC_BLOG Rest API
 
 文章列表
-GET /api/articles  
+GET /api/posts  
 
 文章內文
-GET /api/articles/{id}  
+GET /api/posts/{id}
 
 新增文章
-POST /api/articles  
+POST /api/posts  
 request json
 {
   "title": "xxx",
@@ -17,18 +17,13 @@ request json
 }
 
 更新文章
-PUT /api/articles/{id}  
+PATCH /api/posts/{id}  
 request json
 {
   "title": "xxx",
   "content": "xxx"
 }  
-p.s:更新可擇一
 
 刪除文章
-DELETE /api/articles/{id}  
-request json
-{
-  "title": "",
-  "content": ""
-}
+DELETE /api/posts/{id}  
+
